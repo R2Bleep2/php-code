@@ -1,6 +1,6 @@
 <?php
 
-/** Test of the Code module version 2025-9-20. */
+/** Test of the Code module version 1.0.0. */
 
 namespace Code;
 
