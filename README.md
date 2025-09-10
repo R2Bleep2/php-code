@@ -1,5 +1,5 @@
 # php-code
-A PHP module for code forms of objects.
+A PHP module for code forms of classes.
 
 ## Installation
 This is a PHP module meant to be copied into [one of your PHP "include" directories](https://www.php.net/manual/en/ini.core.php#ini.include-path). Copy the "Code.php" file into one of those directories.
@@ -101,9 +101,8 @@ var_dump("Enclosed string of emphasis element parsed from code:", $emphasisEleme
 ## Testing
 There are test cases in the file "CodeTest.php". With the "Code.php" module installed, run this file as a PHP script on the command line.
 
-In [bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)), type the following:
+In [bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)), when in the same directory as the test file, type the following:
 
 ```bash
 php CodeTest.php
 ```
-
