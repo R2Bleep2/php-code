@@ -65,8 +65,7 @@ class ExampleClass implements HasCode, ConstuctableFromCode {
     
 }
 
-// Expected output: `"42"`.
-var_dump("String form of class with code form:", (string)$exampleInstance);
+var_dump("String form of class with code form:", (string)$exampleInstance); // Expected output: `"42"`.
 ```
 
 This module is particularly useful when writing custom languages. For example, a class for an emphasis element in Markdown can specify a managed `code` property that interprets a string enclosed in asterisks.
@@ -79,7 +78,7 @@ class EmphasisElement implements HasCode, ConstructableFromCode {
     /** The enclosed string. This can be parsed from the code form. */
     public string $enclosed;
     
-    /** The managed code property. When set, asterisks are stripped, if present. */
+    /** The managed code property. When set, asterisks are stripped, if present, then the resulting enclosed string is assigned to the `enclosed` property. Thus the code is a PHP virtual property. */
     public string $code {
         
         set {
@@ -96,6 +95,11 @@ class EmphasisElement implements HasCode, ConstructableFromCode {
         
     }
     
+    use CodeStringConverter;
+    use CustomCodeConstructor;
+    
 }
-```
 
+$emphasisElement = EmphasisElement::fromCode($myCode);
+var_dump("Enclosed string of emphasis element parsed from code:", $emphasisElement->enclosed) // Expected output: `"Hello, world!"`.
+```
