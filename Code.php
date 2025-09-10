@@ -2,7 +2,7 @@
 
 /**
 
-A module for conversion to and from code forms of objects.
+A module for conversion to and from code forms of classes.
 
 Version
 -------
@@ -37,7 +37,7 @@ trait CustomCodeConstructor {
     }
 }
 
-/** A trait for a special string conversion method that refers to the code form, fulfilling a common assumption that the string conversion of a class with a code form is its code. */
+/** A trait for a special string conversion method that refers to the code form. This conversion will likely be expected for elements of custom languages. */
 trait CodeStringConverter {
     function __toString() {
         return $this->code;
