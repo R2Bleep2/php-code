@@ -31,6 +31,12 @@ This module defines an interface `HasCode` for a managed `code` property represe
         
     }
     
+    $code = "42";
+    $exampleInstance = new ExampleClass;
+    
+    // When the code is set, it will be interpreted as the value.
+    $exampleInstance->code = "42"; 
+    
 Furthermore, this module defines an interface `ConstructableFromCode` for a custom constructor directly from code. The other properties will be interpreted. It also defines a trait `CustomCodeConstructor` for this custom constructor which fulfils the interface, referring to a `code` property contracted for by the `HasCode` interface.
     
     class ExampleClass implements HasCode, ConstructableFromCode {
@@ -41,6 +47,19 @@ Furthermore, this module defines an interface `ConstructableFromCode` for a cust
         
     }
     
+    // Construction of the class directly using the custom code constructor.
+    $exampleInstance = ExampleClass::fromCode("42");
+    
 There is also a trait `CodeStringConverter` containing a special string conversion method that refers to the code property.
 
-    use CodeStringConverter;
+    class ExampleClass implements HasCode, ConstuctableFromCode {
+        
+        // Previous class body.
+        
+        use CodeStringConverter;
+        
+    }
+    
+    // Expected output: `"42"`.
+    var_dump("String form of class with code form:", (string)$exampleInstance);
+    
