@@ -11,7 +11,7 @@ A PHP module for code forms of objects.
 This is a PHP module meant to be copied into [one of your PHP "include" directories](https://www.php.net/manual/en/ini.core.php#ini.include-path). Copy the "Code.php" file into one of those directories.
 
 ## Usage
-This module defines an interface `HasCode` for a managed `code` property representing the code form of an object. The object then specifies how the code form translates into the other properties of the object.
+This module defines an interface `HasCode` for a managed `code` property representing the code form of a class. The class then specifies how the code form translates into the other properties of the class.
 
 ```php
 class ExampleClass implements HasCode {
@@ -68,3 +68,34 @@ class ExampleClass implements HasCode, ConstuctableFromCode {
 // Expected output: `"42"`.
 var_dump("String form of class with code form:", (string)$exampleInstance);
 ```
+
+This module is particularly useful when writing custom languages. For example, a class for an emphasis element in Markdown can specify a managed `code` property that interprets a string enclosed in asterisks.
+
+```php
+$myCode = "*Hello, world!*";
+
+class EmphasisElement implements HasCode, ConstructableFromCode {
+    
+    /** The enclosed string. This can be parsed from the code form. */
+    public string $enclosed;
+    
+    /** The managed code property. When set, asterisks are stripped, if present. */
+    public string $code {
+        
+        set {
+            
+            // Code to parse a given code form by stripping the asterisks.
+            
+        }
+        
+        get {
+            
+            // Code to add asterisks.
+            
+        }
+        
+    }
+    
+}
+```
+
