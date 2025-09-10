@@ -110,5 +110,5 @@ There are test cases in the file "Code0.0.0Test.php". With the "Code0.0.0.php" m
 In [bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)), when in the same directory as the test file, type the following:
 
 ```bash
-php CodeTest.php
+php Code0.0.0Test.php
 ```
