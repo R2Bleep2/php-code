@@ -13,29 +13,31 @@ This is a PHP module meant to be copied into [one of your PHP "include" director
 ## Usage
 This module defines an interface `HasCode` for a managed `code` property representing the code form of an object. The object then specifies how the code form translates into the other properties of the object.
 
-    class ExampleClass implements HasCode {
+```php
+class ExampleClass implements HasCode {
+    
+    /** A property that a code form can be interpreted as. */
+    public int $value;
+    
+    /** The managed code form property. When set, in this case, it is converted to the value property. When gotten, it is converted from the value. */
+    public string $code {
         
-        /** A property that a code form can be interpreted as. */
-        public int $value;
-        
-        /** The managed code form property. When set, in this case, it is converted to the value property. When gotten, it is converted from the value. */
-        public string $code {
-            
-            set(string $code) {   
-                $this->value = (int)$code;
-            }
-            
-            get => (string)$this->value;
-            
+        set(string $code) {   
+            $this->value = (int)$code;
         }
+        
+        get => (string)$this->value;
         
     }
     
-    $code = "42";
-    $exampleInstance = new ExampleClass;
-    
-    // When the code is set, it will be interpreted as the value.
-    $exampleInstance->code = "42"; 
+}
+
+$code = "42";
+$exampleInstance = new ExampleClass;
+
+// When the code is set, it will be interpreted as the value.
+$exampleInstance->code = "42";
+```
     
 Furthermore, this module defines an interface `ConstructableFromCode` for a custom constructor directly from code. The other properties will be interpreted. It also defines a trait `CustomCodeConstructor` for this custom constructor which fulfils the interface, referring to a `code` property contracted for by the `HasCode` interface.
     
