@@ -105,7 +105,7 @@ var_dump("Enclosed string of emphasis element parsed from code:", $emphasisEleme
 ```
 
 ## Testing
-There are test cases in the file "CodeTest.php". With the "Code.php" module installed, run this file as a PHP script on the command line.
+There are test cases in the file "CodeTest.php". With the "Code.php" module installed, run this file as a PHP script on the command line. In [bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)), type the following:
 
 ```bash
 php CodeTest.php
