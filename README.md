@@ -30,3 +30,17 @@ This module defines an interface `HasCode` for a managed `code` property represe
         }
         
     }
+    
+Furthermore, this module defines an interface `ConstructableFromCode` for a custom constructor directly from code. The other properties will be interpreted. It also defines a trait `CustomCodeConstructor` for this custom constructor which fulfils the interface, referring to a `code` property contracted for by the `HasCode` interface.
+    
+    class ExampleClass implements HasCode, ConstructableFromCode {
+        
+        // Previous class body.
+        
+        use CustomCodeConstructor;
+        
+    }
+    
+There is also a trait `CodeStringConverter` containing a special string conversion method that refers to the code property.
+
+    use CodeStringConverter;
