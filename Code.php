@@ -7,7 +7,7 @@ A module for conversion to and from code forms of classes.
 Version
 -------
 
-1.0.0
+0.0.0 (2025-9-10)
 
 PHP Version
 -----------
