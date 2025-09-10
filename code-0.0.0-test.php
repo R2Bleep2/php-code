@@ -1,10 +1,10 @@
 <?php
 
-/** Test of the Code module version 0.0.0. */
+/** Test of the "code-0.0.0.php" module version 0.0.0. */
 
 namespace Code;
 
-include "Code.php";
+include "code-0.0.0.php";
 // Define a simple class with an integer value that can be interpreted as code.
 
 class IntegerClass implements \Code\HasCode, \Code\ConstructableFromCode {
