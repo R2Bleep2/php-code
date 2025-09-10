@@ -8,7 +8,7 @@ A PHP module for code forms of classes.
 8.4.11
 
 ## Installation
-This is a PHP module meant to be copied into [one of your PHP "include" directories](https://www.php.net/manual/en/ini.core.php#ini.include-path). Copy the "Code0.0.0.php" file into one of those directories.
+This is a PHP module meant to be copied into [one of your PHP "include" directories](https://www.php.net/manual/en/ini.core.php#ini.include-path). Copy the "code-0.0.0.php" file into one of those directories.
 
 ## Usage
 This module defines an interface `HasCode` for a managed `code` property representing the code form of a class. The class then specifies how the code form translates into the other properties of the class.
@@ -105,10 +105,10 @@ var_dump("Enclosed string of emphasis element parsed from code:", $emphasisEleme
 ```
 
 ## Testing
-There are test cases in the file "Code0.0.0Test.php". With the "Code0.0.0.php" module installed, run this file as a PHP script on the command line.
+There are test cases in the file "code-0.0.0-test.php". With the "code-0.0.0.php" module installed, run this file as a PHP script on the command line.
 
 In [bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)), when in the same directory as the test file, type the following:
 
 ```bash
-php Code0.0.0Test.php
+php code-0.0.0-test.php
 ```
