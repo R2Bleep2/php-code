@@ -103,3 +103,11 @@ class EmphasisElement implements HasCode, ConstructableFromCode {
 $emphasisElement = EmphasisElement::fromCode($myCode);
 var_dump("Enclosed string of emphasis element parsed from code:", $emphasisElement->enclosed) // Expected output: `"Hello, world!"`.
 ```
+
+## Testing
+There are test cases in the file "CodeTest.php". With the "Code.php" module installed, run this file as a PHP script on the command line.
+
+```bash
+php CodeTest.php
+```
+
