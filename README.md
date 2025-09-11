@@ -109,6 +109,6 @@ There are test cases in the file "code-0.0.0-test.php". With the "code-0.0.0.php
 
 In [bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)), when in the same directory as the test file, type the following:
 
-```bash
+```sh
 php code-0.0.0-test.php
 ```
